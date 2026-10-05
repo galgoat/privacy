@@ -83,6 +83,7 @@
     }
     .toolbar { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
     .brand { display: inline-flex; align-items: center; gap: 10px; flex: 0 0 auto; color: var(--ink); text-decoration: none; font-size: 1.08rem; font-weight: 780; letter-spacing: -.03em; }
+    .brand-logo { display: block; width: 160px; height: auto; }
     .brand-mark { display: block; width: 38px; height: 38px; flex: 0 0 38px; }
     .controls { display: flex; align-items: center; justify-content: flex-end; gap: 10px; }
     .control-group {
@@ -181,12 +182,7 @@
   <header class="topbar">
     <div class="shell toolbar">
       <a class="brand" href="#top" aria-label="Voltix home">
-        <svg class="brand-mark" viewBox="0 0 108 108" role="img" aria-labelledby="logo-title">
-          <title id="logo-title">Voltix</title>
-          <rect width="108" height="108" rx="28" fill="#FFC107" />
-          <path d="M62 14 28 57h22L40 94l41-51H58z" fill="#fff" />
-        </svg>
-        <span>Voltix</span>
+        <img class="brand-logo" src="voltix-horizontal-light.png" alt="Voltix" width="160" height="62">
       </a>
       <div class="controls">
         <div class="control-group" id="theme-controls" role="group" aria-label="Theme">
@@ -208,9 +204,9 @@
         <div class="eyebrow">Voltix · Privacy</div>
         <h1 id="title-en">Privacy policy</h1>
         <p class="hero-copy">This page explains what Voltix uses information for, what stays on your device, and what is shared with other services when you use the app.</p>
-        <div class="meta"><span>Voltix · developed by Galgoat</span><span>Last updated: 1 October 2026</span></div>
+        <div class="meta"><span>Voltix · developed by Galgoat</span><span>Last updated: 5 October 2026</span></div>
       </header>
-      <aside class="summary" role="note"><p><strong>In brief.</strong> Voltix stores your choices, price data and feature settings on your device. It contacts public energy data services for the market you select. The free edition shows three anchored Google AdMob banners. The unlocked edition removes those banners after Google Play confirms a one-time purchase; app features are otherwise the same. Voltix has no user accounts or developer-operated profile server.</p></aside>
+      <aside class="summary" role="note"><p><strong>In brief.</strong> Voltix stores your choices, price data and feature settings on your device. It contacts public energy data services for the market you select. The free edition shows a shared anchored Google AdMob banner and occasional full-screen ads. The unlocked edition removes advertising after Google Play confirms a one-time purchase; app features are otherwise the same. Voltix has no user accounts or developer-operated profile server.</p></aside>
       <nav class="contents" aria-label="Contents">
         <h2>On this page</h2>
         <ol>
@@ -228,15 +224,16 @@
 
       <section class="policy-section" id="en-device">
         <h2 class="section-title">1. Information stored on your device</h2>
-        <p>Voltix does not require an account. It stores your selected country, electricity zone, tariff and currency; language, theme, accent colour and launcher icon; chart and notification preferences; and the settings for features you use.</p>
+        <p>Voltix does not require an account. It stores your selected country, electricity zone, tariff and currency; language, theme and accent colour; chart and notification preferences; and the settings for features you use.</p>
         <p>The app caches current and historical electricity prices, source and coverage details, grid energy-mix data and exchange rates. The calculator stores the appliance names and values you enter, such as power and usage time, and electric-car charging values such as target energy and charger power. Those inputs are used for calculations on your device and are not sent to the public price-data providers.</p>
         <p>Local app storage can also contain widget display snapshots, notification scheduling and deduplication state, and the status of an ad-removal purchase after Google Play confirms it. Voltix does not offer a personal solar-panel or inverter connection in the current app, and it does not read data from home solar equipment.</p>
         <p>The current app code contains no developer-operated account, analytics or crash-reporting service. Android may include app data in device backups depending on your Android and account settings; those backups are controlled by Android and your account provider, not received by Galgoat.</p>
+        <p>Voltix also stores a local launch counter and the dates of the last ad-removal offer and review request. These values control the first two ad-free launches and avoid repeating prompts too often; they are not sent to a Galgoat analytics server. The automatic ad-removal offer becomes eligible on the fourth launch and then after at least 14 days. Review requests become eligible from the fifth launch, at intervals of at least 30 days; Google may decide not to display them.</p>
       </section>
 
       <section class="policy-section" id="en-location">
         <h2 class="section-title">2. Location and market suggestions</h2>
-        <p>During initial setup, you may choose a one-time location suggestion to help select a country or electricity zone. If you do, Voltix requests the Android coarse or precise location permission you grant. Android's geocoder may process the coordinates to return a place. Voltix saves the market you choose, not a location history or the raw coordinates.</p>
+        <p>During initial setup or in Settings → Data and privacy, you may request a one-time location suggestion to help select a country or electricity zone. If you do, Voltix requests the Android coarse or precise location permission you grant. Android's geocoder may process the coordinates to return a place. Voltix saves the market you choose, not a location history or the raw coordinates.</p>
         <p>Setup can also suggest a country from your internet connection's IP address. Voltix may query ipwho.is, ipinfo.io and ipapi.co in sequence, stopping when it receives a usable result. Each service that is actually contacted receives your IP address. This is an approximate network-based country estimate; you can instead choose a market yourself.</p>
         <p>Raw location coordinates are not included in price-data requests or in the contextual words Voltix adds to its ad requests.</p>
       </section>
@@ -249,23 +246,24 @@
         <details class="provider-details">
           <summary>View possible electricity and exchange-rate providers</summary>
           <ul class="provider-list">
-            <li>api.energy-charts.info</li><li>spot.utilitarian.io</li><li>www.smard.de</li><li>api.frankfurter.dev</li><li>www.eia.gov</li><li>www.smartgriddashboard.com</li><li>apidatos.ree.es</li><li>api.elhub.no</li><li>dataportal-api.nordpoolgroup.com</li><li>www.hvakosterstrommen.no</li><li>api.energidataservice.dk</li><li>www.kpx.or.kr</li><li>epsis.kpx.or.kr</li><li>www.occto.or.jp</li><li>data.eic-jp.org</li><li>api.esios.ree.es</li><li>elecz.com</li><li>datahub.ren.pt</li><li>energiedashboard.admin.ch</li><li>www.jepx.jp</li><li>visualisations.aemo.com.au</li><li>data.opennem.org.au</li><li>nemweb.com.au</li><li>api.elprisernaidag.se</li><li>www.elprisetjustnu.se</li><li>www.sahkonhintatanaan.fi</li><li>data.elexon.co.uk</li><li>data.gov.sg</li><li>reports.sem-o.com</li><li>reports.semopx.com</li><li>api.openelectricity.org.au</li><li>www.opcom.ro</li><li>www.transelectrica.ro</li><li>reports-public.ieso.ca</li><li>www.ieso.ca</li><li>oasis.caiso.com</li><li>mis.nyiso.com</li><li>www.ercot.com</li><li>data.kardashevlabs.org</li><li>www.emi.ea.govt.nz</li><li>api.em6.co.nz</li><li>www.transpower.co.nz</li><li>www2.electricityinfo.co.nz</li><li>emidatasets.blob.core.windows.net</li><li>servicebus.ren.pt</li><li>www.vargen.smartgriddashboard.com</li><li>www.nems.emcsg.com</li><li>www.spgroup.com.sg</li><li>denkiyoho.hepco.co.jp</li><li>setsuden.nw.tohoku-epco.co.jp</li><li>www4.tepco.co.jp</li><li>powergrid.chuden.co.jp</li><li>www.rikuden.co.jp</li><li>www.kansai-td.co.jp</li><li>www.energia.co.jp</li><li>www.yonden.co.jp</li><li>www.kyuden.co.jp</li>
-            <li>data-api.nordpoolgroup.com</li><li>elprisernaidag.se</li><li>energy-charts.info</li><li>opcom.ro</li><li>www.aemo.com.au</li><li>www.caiso.com</li><li>ieso.ca</li><li>www.ea.govt.nz</li><li>www.elcom.admin.ch</li><li>www.ema.gov.sg</li><li>www.ems.co.nz</li><li>www.energidataservice.dk</li><li>www.nordpoolgroup.com</li><li>www.omie.es</li><li>www.semopx.com</li><li>www.swissgrid.ch</li><li>www.terna.it</li>
-            <li>data-api.nordpoolgroup.com</li><li>elprisernaidag.se</li><li>energy-charts.info</li><li>opcom.ro</li><li>www.aemo.com.au</li><li>www.caiso.com</li><li>ieso.ca</li><li>www.ea.govt.nz</li><li>www.elcom.admin.ch</li><li>www.ema.gov.sg</li><li>www.ems.co.nz</li><li>www.energidataservice.dk</li><li>www.nordpoolgroup.com</li><li>www.omie.es</li><li>www.semopx.com</li><li>www.swissgrid.ch</li><li>www.terna.it</li>
+            <li>api.elhub.no</li><li>api.elprisernaidag.se</li><li>api.em6.co.nz</li><li>api.energidataservice.dk</li><li>api.energy-charts.info</li><li>api.esios.ree.es</li><li>api.frankfurter.dev</li><li>api.openelectricity.org.au</li><li>apidatos.ree.es</li><li>data-api.nordpoolgroup.com</li><li>data.eic-jp.org</li><li>data.elexon.co.uk</li><li>data.gov.sg</li><li>data.kardashevlabs.org</li><li>data.opennem.org.au</li><li>datahub.ren.pt</li><li>dataportal-api.nordpoolgroup.com</li><li>denkiyoho.hepco.co.jp</li><li>elecz.com</li><li>elprisernaidag.se</li><li>emidatasets.blob.core.windows.net</li><li>energiedashboard.admin.ch</li><li>energy-charts.info</li><li>epsis.kpx.or.kr</li><li>ieso.ca</li><li>mis.nyiso.com</li><li>nemweb.com.au</li><li>oasis.caiso.com</li><li>opcom.ro</li><li>powergrid.chuden.co.jp</li><li>reports-public.ieso.ca</li><li>reports.sem-o.com</li><li>reports.semopx.com</li><li>servicebus.ren.pt</li><li>setsuden.nw.tohoku-epco.co.jp</li><li>spot.utilitarian.io</li><li>visualisations.aemo.com.au</li><li>www.aemo.com.au</li><li>www.caiso.com</li><li>www.ea.govt.nz</li><li>www.eia.gov</li><li>www.elcom.admin.ch</li><li>www.elprisetjustnu.se</li><li>www.ema.gov.sg</li><li>www.emi.ea.govt.nz</li><li>www.ems.co.nz</li><li>www.energia.co.jp</li><li>www.energidataservice.dk</li><li>www.ercot.com</li><li>www.hvakosterstrommen.no</li><li>www.ieso.ca</li><li>www.jepx.jp</li><li>www.kansai-td.co.jp</li><li>www.kpx.or.kr</li><li>www.kyuden.co.jp</li><li>www.nems.emcsg.com</li><li>www.nordpoolgroup.com</li><li>www.occto.or.jp</li><li>www.omie.es</li><li>www.opcom.ro</li><li>www.rikuden.co.jp</li><li>www.sahkonhintatanaan.fi</li><li>www.semopx.com</li><li>www.smard.de</li><li>www.smartgriddashboard.com</li><li>www.spgroup.com.sg</li><li>www.swissgrid.ch</li><li>www.terna.it</li><li>www.transelectrica.ro</li><li>www.transpower.co.nz</li><li>www.vargen.smartgriddashboard.com</li><li>www.yonden.co.jp</li><li>www2.electricityinfo.co.nz</li><li>www4.tepco.co.jp</li>
           </ul>
         </details>
       </section>
 
       <section class="policy-section" id="en-ads">
         <h2 class="section-title">4. Advertising and consent</h2>
-        <p>The free edition has anchored Google AdMob banner placements on the Home/current-price, History and Calculator screens. For each placement, Voltix adds a small set of contextual keywords based on the app language and the screen's energy topic. The app does not put your age, selected country, calculator entries or raw location coordinates into those keywords.</p>
+        <p>The free edition uses one shared anchored Google AdMob banner across Price, Calculator and History. Eligible navigation transitions may also display a full-screen interstitial, for example around opening available tomorrow prices or leaving settings after changing appearance or disabling notifications. Interstitials are limited to at most one per app-process session. No ads are shown during the first two app launches. Ad availability and delivery remain subject to consent, connectivity and Google inventory.</p>
+        <p>Banner requests include a few contextual keywords about electricity, in the app language. These keywords do not include your age, selected country, appliance inputs or precise coordinates. Interstitial requests do not add those keywords. Google selects the creative; contextual keywords do not guarantee a particular topic, language or personalised ad.</p>
         <p>The Google Mobile Ads SDK may collect or share information such as your IP address, device or advertising identifiers, ad and app interactions, and diagnostic data. Google and its advertising partners may use information for ad delivery, measurement, security and fraud prevention, and may personalise ads where your region and privacy choices allow it. See Google's <a href="https://policies.google.com/privacy">Privacy Policy</a> and <a href="https://developers.google.com/admob/android/privacy/play-data-disclosure">Mobile Ads data disclosure</a>.</p>
-        <p>Voltix uses Google's User Messaging Platform (UMP) to request and manage ad-consent choices where required. Where available, you can reopen ad privacy options in <strong>Settings → Data and privacy</strong>. Ads may not load because of connectivity, consent, available inventory or app/account eligibility. In the unlocked edition, the app removes its banner placements after Google Play validates the one-time purchase; the other app features remain available.</p>
+        <p>Voltix uses Google's User Messaging Platform (UMP) to request and manage ad-consent choices where required. Where available, you can reopen ad privacy options in <strong>Settings → Data and privacy</strong>. Ads may not load because of connectivity, consent, available inventory or app/account eligibility. In the unlocked edition, the app removes its banners and interstitial ads after Google Play validates the one-time purchase; the other app features remain available.</p>
+        <p>UMP updates advertising eligibility and shows the messages applicable to your region and configuration, including European or US-state privacy choices when required and available. Personalisation depends on the purposes and partners you allow and Google's eligibility rules; permission to request an ad is not proof that it is personalised. You can revisit available consent options and use Android's advertising-ID privacy controls. Withdrawing consent affects future requests; it does not erase processing already performed. Voltix does not bypass your choices to obtain personalised ads.</p>
       </section>
 
       <section class="policy-section" id="en-purchases">
         <h2 class="section-title">5. One-time purchase to remove ads</h2>
         <p>If you buy permanent ad removal, Google Play processes the payment. Voltix receives the purchase state needed to verify ownership, acknowledge the transaction and save the ad-removal entitlement on your device. The app does not receive your card number or payment credentials. Google Play manages payment details and purchase restoration under its own terms and privacy policy.</p>
+        <p>This is a non-consumable one-time purchase, not a subscription. The amount displayed before payment comes from Google Play's local product price. Voltix checks purchases through Play Billing and requires a purchased state and Play acknowledgment before saving permanent ad removal. Pending, cancelled or failed purchases do not unlock it. Purchase queries and the Restore purchase option can synchronise ownership with your Google Play account. The local purchase state can be rechecked after clearing app data or changing devices; Google Play remains the source of ownership.</p>
       </section>
 
       <section class="policy-section" id="en-features">
@@ -273,6 +271,7 @@
         <p>The mobile app provides current electricity prices, market and tariff selection, historical charts where source data is available, a calculator for appliances and electric-car charging, appearance and language settings, and optional home-screen widgets. Calculator entries and presentation preferences stay in app storage. A widget displays a local snapshot of the selected market's prices or grid energy mix.</p>
         <p>If you enable price notifications, Voltix schedules background checks for the selected market (approximately every 30 minutes when Android allows them) and uses the returned price data to prepare the notification types you selected. A separate daily background check can retrieve current market data to detect published tariff-rule changes. Android controls notification permission and may defer background work to protect battery and network use.</p>
         <p>The current Voltix mobile app does not offer a Wear OS app or a user-facing watch feature. The Android build does contain a background bridge that can publish a limited display snapshot through Google Play Services' Wear Data Layer when local price or display data changes. That snapshot can include prices and times, market, tariff, currency, grid energy mix, source, language, theme and accent colour; it does not include location coordinates or calculator entries. This is a technical data flow, not a currently offered Wear OS app.</p>
+        <p>Voltix can ask for notification permission during initial setup; you can decline it and continue using the app. It may request a rating using Google's official in-app review flow. If you submit stars or a comment, Google Play receives and may publish that review according to its own policies. Voltix receives flow completion, not your submitted rating or review text.</p>
       </section>
 
       <section class="policy-section" id="en-sharing">
@@ -281,7 +280,7 @@
         <ul>
           <li><strong>Google Mobile Ads and UMP</strong> for ad requests, consent choices, ad measurement and related diagnostics in the free edition.</li>
           <li><strong>Google Play</strong> for payment and purchase ownership checks, and <strong>Google Play Services</strong> for the background Wear Data Layer transfer described above.</li>
-          <li><strong>Android's location and geocoding services</strong> when you request a one-time location suggestion during setup.</li>
+          <li><strong>Android's location and geocoding services</strong> when you request a one-time location suggestion during setup or from Settings.</li>
           <li><strong>The IP-country services, electricity-data providers and exchange-rate provider</strong> described above, when the related feature makes a request.</li>
           <li><strong>GitHub</strong> if this policy is hosted on GitHub Pages. GitHub may process visitor IP addresses and technical logs to operate and protect its platform. See the <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement">GitHub Privacy Statement</a>.</li>
         </ul>
@@ -294,12 +293,14 @@
         <p>App preferences, calculator entries, cached prices and energy data, widget snapshots, notification state and the locally saved purchase entitlement remain in app storage until replaced, removed by the app, or you clear Voltix's data or uninstall it. Android backups may retain app data when enabled in your device or account settings. Google Play keeps purchase ownership information so a completed purchase can be restored; clearing local data does not cancel it.</p>
         <p>You can change app preferences, turn off location or notification permissions in Android, manage available ad-consent options in <strong>Settings → Data and privacy</strong>, or clear Voltix's local data through Android. You may also contact the privacy address below. Requests about information held by Google, GitHub or another provider may need to be sent to that provider.</p>
         <p>Depending on where you live, privacy law may give you rights to request access, correction, deletion, restriction or a copy of personal information; object to certain processing; withdraw consent for future processing; or complain to a data protection authority. Rights and exceptions depend on local law. We may ask for information to verify your identity before acting on a request.</p>
+        <p>Cached price and grid-energy records are pruned during cache maintenance using a 30-day fetch/save-age threshold and additional entry or size budgets. This also applies to recently fetched historical data from past months or years and across markets. It is not a guaranteed deletion exactly 30 days after a calendar date: maintenance runs when the app performs the relevant work, and the database can reclaim unused space later. Preferences and confirmed purchase ownership are not part of this disposable price-cache cleanup.</p>
       </section>
 
       <section class="policy-section" id="en-security">
         <h2 class="section-title">9. Security and policy updates</h2>
         <p>Voltix uses HTTPS for its public electricity, exchange-rate and IP-country service requests. Google Play, advertising and consent services handle their own connections and security. No method of internet transmission or storage can be guaranteed completely secure.</p>
         <p>We will update this page if Voltix's available features, data use or service providers change. The date near the top shows when the policy was last reviewed.</p>
+        <p>This policy website uses no advertising SDK, analytics script, third-party font or tracking cookie. Its language and theme controls run locally in your browser; the language can be reflected in the URL fragment. GitHub Pages receives the requests needed to serve the page and logo. If you email us, Galgoat receives your email address and the contents you send to respond to your request; please do not send payment credentials or unnecessary sensitive information.</p>
       </section>
 
       <section class="contact" aria-labelledby="en-contact-title">
@@ -313,9 +314,9 @@
         <div class="eyebrow">Voltix · Privacidad</div>
         <h1 id="title-es">Política de privacidad</h1>
         <p class="hero-copy">Aquí explicamos para qué usa Voltix la información, qué permanece en tu dispositivo y qué se comparte con otros servicios al utilizar la app.</p>
-        <div class="meta"><span>Voltix · desarrollada por Galgoat</span><span>Última revisión: 1 de octubre de 2026</span></div>
+        <div class="meta"><span>Voltix · desarrollada por Galgoat</span><span>Última revisión: 5 de octubre de 2026</span></div>
       </header>
-      <aside class="summary" role="note"><p><strong>En resumen.</strong> Voltix guarda en tu dispositivo tus opciones, datos de precios y ajustes de funciones. Consulta servicios públicos de energía para el mercado que selecciones. La edición gratuita muestra tres banners anclados de Google AdMob. La edición desbloqueada los quita cuando Google Play confirma una compra única; las funciones son las mismas. Voltix no tiene cuentas de usuario ni un servidor propio de perfiles.</p></aside>
+      <aside class="summary" role="note"><p><strong>En resumen.</strong> Voltix guarda en tu dispositivo tus opciones, datos de precios y ajustes de funciones. Consulta servicios públicos de energía para el mercado que selecciones. La edición gratuita muestra un banner anclado compartido de Google AdMob y anuncios ocasionales a pantalla completa. La edición desbloqueada elimina la publicidad cuando Google Play confirma una compra única; las funciones son las mismas. Voltix no tiene cuentas de usuario ni un servidor propio de perfiles.</p></aside>
       <nav class="contents" aria-label="Contenido">
         <h2>En esta página</h2>
         <ol>
@@ -333,15 +334,16 @@
 
       <section class="policy-section" id="es-device">
         <h2 class="section-title">1. Información guardada en tu dispositivo</h2>
-        <p>Voltix no requiere una cuenta. Guarda el país, la zona eléctrica, la tarifa y la moneda que seleccionas; el idioma, el tema, el color de acento y el icono; las preferencias de gráficos y avisos; y los ajustes de las funciones que utilizas.</p>
+        <p>Voltix no requiere una cuenta. Guarda el país, la zona eléctrica, la tarifa y la moneda que seleccionas; el idioma, el tema y el color de acento; las preferencias de gráficos y avisos; y los ajustes de las funciones que utilizas.</p>
         <p>La app almacena en caché precios eléctricos actuales e históricos, información de fuentes y cobertura, datos de mezcla energética de la red y tipos de cambio. La calculadora guarda los nombres y valores que introduces para tus aparatos —por ejemplo, potencia y tiempo de uso— y para la carga de un coche eléctrico, como la energía objetivo y la potencia del cargador. Estos datos se usan para calcular resultados en tu dispositivo y no se envían a los proveedores públicos de precios.</p>
         <p>El almacenamiento local también puede incluir copias para los widgets, el estado de programación y duplicados de avisos, y el estado de una compra para quitar anuncios después de que Google Play la confirme. La app actual no ofrece una conexión con placas solares o inversores personales ni lee datos de equipos solares domésticos.</p>
         <p>El código actual de la app no contiene un sistema de cuentas, analítica o informes de fallos gestionado por Galgoat. Android puede incluir datos de la app en las copias de seguridad del dispositivo según los ajustes de Android y de tu cuenta; esas copias las controla Android y el proveedor de tu cuenta, no las recibe Galgoat.</p>
+        <p>Voltix guarda también un contador local de inicios y las fechas del último aviso para quitar anuncios y de la última solicitud de valoración. Sirven para los dos primeros inicios sin anuncios y para no repetir avisos demasiado a menudo; no se envían a un servidor de analítica de Galgoat. El aviso automático para quitar anuncios puede aparecer desde el cuarto inicio y después de al menos 14 días. Las solicitudes de valoración pueden empezar desde el quinto inicio, con intervalos de al menos 30 días; Google puede decidir no mostrarlas.</p>
       </section>
 
       <section class="policy-section" id="es-location">
         <h2 class="section-title">2. Ubicación y sugerencias de mercado</h2>
-        <p>Durante la configuración inicial puedes pedir una sugerencia de ubicación para seleccionar un país o una zona eléctrica. Si lo haces, Voltix solicita el permiso de ubicación aproximada o precisa de Android que concedas. El geocodificador de Android puede procesar las coordenadas para devolver un lugar. Voltix guarda el mercado que eliges, no un historial de ubicación ni las coordenadas originales.</p>
+        <p>Durante la configuración inicial o en Ajustes → Datos y privacidad puedes pedir una sugerencia puntual de ubicación para seleccionar un país o una zona eléctrica. Si lo haces, Voltix solicita el permiso de ubicación aproximada o precisa de Android que concedas. El geocodificador de Android puede procesar las coordenadas para devolver un lugar. Voltix guarda el mercado que eliges, no un historial de ubicación ni las coordenadas originales.</p>
         <p>La configuración también puede sugerir un país a partir de la IP de tu conexión. Voltix puede consultar ipwho.is, ipinfo.io e ipapi.co en secuencia y detenerse al obtener un resultado válido. Cada servicio al que se haga una consulta recibe tu dirección IP. La estimación de país por red es aproximada; también puedes elegir el mercado manualmente.</p>
         <p>Las coordenadas originales no se incluyen en las consultas de precios ni en las palabras contextuales que Voltix añade a las solicitudes de anuncios.</p>
       </section>
@@ -354,21 +356,24 @@
         <details class="provider-details">
           <summary>Ver posibles proveedores de electricidad y divisas</summary>
           <ul class="provider-list">
-            <li>api.energy-charts.info</li><li>spot.utilitarian.io</li><li>www.smard.de</li><li>api.frankfurter.dev</li><li>www.eia.gov</li><li>www.smartgriddashboard.com</li><li>apidatos.ree.es</li><li>api.elhub.no</li><li>dataportal-api.nordpoolgroup.com</li><li>www.hvakosterstrommen.no</li><li>api.energidataservice.dk</li><li>www.kpx.or.kr</li><li>epsis.kpx.or.kr</li><li>www.occto.or.jp</li><li>data.eic-jp.org</li><li>api.esios.ree.es</li><li>elecz.com</li><li>datahub.ren.pt</li><li>energiedashboard.admin.ch</li><li>www.jepx.jp</li><li>visualisations.aemo.com.au</li><li>data.opennem.org.au</li><li>nemweb.com.au</li><li>api.elprisernaidag.se</li><li>www.elprisetjustnu.se</li><li>www.sahkonhintatanaan.fi</li><li>data.elexon.co.uk</li><li>data.gov.sg</li><li>reports.sem-o.com</li><li>reports.semopx.com</li><li>api.openelectricity.org.au</li><li>www.opcom.ro</li><li>www.transelectrica.ro</li><li>reports-public.ieso.ca</li><li>www.ieso.ca</li><li>oasis.caiso.com</li><li>mis.nyiso.com</li><li>www.ercot.com</li><li>data.kardashevlabs.org</li><li>www.emi.ea.govt.nz</li><li>api.em6.co.nz</li><li>www.transpower.co.nz</li><li>www2.electricityinfo.co.nz</li><li>emidatasets.blob.core.windows.net</li><li>servicebus.ren.pt</li><li>www.vargen.smartgriddashboard.com</li><li>www.nems.emcsg.com</li><li>www.spgroup.com.sg</li><li>denkiyoho.hepco.co.jp</li><li>setsuden.nw.tohoku-epco.co.jp</li><li>www4.tepco.co.jp</li><li>powergrid.chuden.co.jp</li><li>www.rikuden.co.jp</li><li>www.kansai-td.co.jp</li><li>www.energia.co.jp</li><li>www.yonden.co.jp</li><li>www.kyuden.co.jp</li>
+            <li>api.elhub.no</li><li>api.elprisernaidag.se</li><li>api.em6.co.nz</li><li>api.energidataservice.dk</li><li>api.energy-charts.info</li><li>api.esios.ree.es</li><li>api.frankfurter.dev</li><li>api.openelectricity.org.au</li><li>apidatos.ree.es</li><li>data-api.nordpoolgroup.com</li><li>data.eic-jp.org</li><li>data.elexon.co.uk</li><li>data.gov.sg</li><li>data.kardashevlabs.org</li><li>data.opennem.org.au</li><li>datahub.ren.pt</li><li>dataportal-api.nordpoolgroup.com</li><li>denkiyoho.hepco.co.jp</li><li>elecz.com</li><li>elprisernaidag.se</li><li>emidatasets.blob.core.windows.net</li><li>energiedashboard.admin.ch</li><li>energy-charts.info</li><li>epsis.kpx.or.kr</li><li>ieso.ca</li><li>mis.nyiso.com</li><li>nemweb.com.au</li><li>oasis.caiso.com</li><li>opcom.ro</li><li>powergrid.chuden.co.jp</li><li>reports-public.ieso.ca</li><li>reports.sem-o.com</li><li>reports.semopx.com</li><li>servicebus.ren.pt</li><li>setsuden.nw.tohoku-epco.co.jp</li><li>spot.utilitarian.io</li><li>visualisations.aemo.com.au</li><li>www.aemo.com.au</li><li>www.caiso.com</li><li>www.ea.govt.nz</li><li>www.eia.gov</li><li>www.elcom.admin.ch</li><li>www.elprisetjustnu.se</li><li>www.ema.gov.sg</li><li>www.emi.ea.govt.nz</li><li>www.ems.co.nz</li><li>www.energia.co.jp</li><li>www.energidataservice.dk</li><li>www.ercot.com</li><li>www.hvakosterstrommen.no</li><li>www.ieso.ca</li><li>www.jepx.jp</li><li>www.kansai-td.co.jp</li><li>www.kpx.or.kr</li><li>www.kyuden.co.jp</li><li>www.nems.emcsg.com</li><li>www.nordpoolgroup.com</li><li>www.occto.or.jp</li><li>www.omie.es</li><li>www.opcom.ro</li><li>www.rikuden.co.jp</li><li>www.sahkonhintatanaan.fi</li><li>www.semopx.com</li><li>www.smard.de</li><li>www.smartgriddashboard.com</li><li>www.spgroup.com.sg</li><li>www.swissgrid.ch</li><li>www.terna.it</li><li>www.transelectrica.ro</li><li>www.transpower.co.nz</li><li>www.vargen.smartgriddashboard.com</li><li>www.yonden.co.jp</li><li>www2.electricityinfo.co.nz</li><li>www4.tepco.co.jp</li>
           </ul>
         </details>
       </section>
 
       <section class="policy-section" id="es-ads">
         <h2 class="section-title">4. Publicidad y consentimiento</h2>
-        <p>La edición gratuita tiene banners anclados de Google AdMob en Inicio/precio actual, Histórico y Calculadora. En cada espacio, Voltix añade unas pocas palabras clave contextuales según el idioma de la app y el tema energético de esa pantalla. La app no incluye en esas palabras tu edad, el país seleccionado, los datos de la calculadora ni las coordenadas originales.</p>
+        <p>La edición gratuita usa un único banner anclado compartido entre Precio, Calculadora e Histórico. Algunas transiciones de navegación pueden mostrar un intersticial a pantalla completa, por ejemplo al abrir precios disponibles de mañana o al salir de ajustes tras cambiar la apariencia o desactivar notificaciones. Hay un máximo de un intersticial por sesión del proceso de la app. Los dos primeros inicios no muestran anuncios. La disponibilidad y la entrega dependen del consentimiento, la conexión y el inventario de Google.</p>
+        <p>Las solicitudes de banner añaden algunas palabras contextuales sobre electricidad en el idioma de la app. No incluyen tu edad, el país seleccionado, los datos de tus aparatos ni coordenadas precisas. Las solicitudes intersticiales no añaden esas palabras. Google selecciona la creatividad; las palabras contextuales no garantizan un tema, idioma o anuncio personalizado concreto.</p>
         <p>El SDK Google Mobile Ads puede recopilar o compartir información como la IP, identificadores del dispositivo o publicitarios, interacciones con la app y los anuncios, y datos de diagnóstico. Google y sus socios pueden usarla para mostrar y medir anuncios, seguridad y prevención del fraude, y personalizarlos cuando lo permiten tu región y tus opciones de privacidad. Consulta la <a href="https://policies.google.com/privacy?hl=es">Política de privacidad de Google</a> y la <a href="https://developers.google.com/admob/android/privacy/play-data-disclosure">declaración de datos de Mobile Ads</a>.</p>
-        <p>Voltix usa Google User Messaging Platform (UMP) para solicitar y gestionar las opciones de consentimiento publicitario cuando es necesario. Si está disponible, puedes volver a abrir las opciones en <strong>Ajustes → Datos y privacidad</strong>. Un anuncio puede no cargarse por conexión, consentimiento, inventario disponible o elegibilidad de la app o cuenta. En la edición desbloqueada, la app quita los espacios publicitarios cuando Google Play valida la compra única; las demás funciones siguen disponibles.</p>
+        <p>Voltix usa Google User Messaging Platform (UMP) para solicitar y gestionar las opciones de consentimiento publicitario cuando es necesario. Si está disponible, puedes volver a abrir las opciones en <strong>Ajustes → Datos y privacidad</strong>. Un anuncio puede no cargarse por conexión, consentimiento, inventario disponible o elegibilidad de la app o cuenta. En la edición desbloqueada, la app quita los banners y los anuncios intersticiales cuando Google Play valida la compra única; las demás funciones siguen disponibles.</p>
+        <p>UMP actualiza la posibilidad de solicitar anuncios y muestra los mensajes correspondientes a tu región y configuración, incluidas las opciones europeas o de estados de EE. UU. cuando sean necesarias y estén disponibles. La personalización depende de los fines y socios que permitas y de los requisitos de Google; poder solicitar un anuncio no demuestra que sea personalizado. Puedes volver a las opciones de consentimiento disponibles y usar los controles de identificadores publicitarios de Android. Retirar el consentimiento afecta a solicitudes futuras, no borra tratamientos ya realizados. Voltix no omite tus elecciones para obtener anuncios personalizados.</p>
       </section>
 
       <section class="policy-section" id="es-purchases">
         <h2 class="section-title">5. Compra única para quitar anuncios</h2>
         <p>Si compras la eliminación permanente de anuncios, Google Play procesa el pago. Voltix recibe el estado necesario para comprobar la titularidad, confirmar la transacción y guardar en el dispositivo el derecho a quitar anuncios. La app no recibe el número de tarjeta ni las credenciales de pago. Google Play gestiona los datos de pago y la restauración de compras según sus propios términos y política de privacidad.</p>
+        <p>Es una compra única no consumible, no una suscripción. El importe que se muestra antes de pagar procede del precio local del producto en Google Play. Voltix consulta la compra mediante Play Billing y exige el estado de comprada y su confirmación por Play antes de guardar la eliminación permanente de anuncios. Una compra pendiente, cancelada o fallida no la desbloquea. Las consultas de compras y la opción Restaurar compra pueden sincronizar la titularidad con tu cuenta de Google Play. El estado local puede comprobarse de nuevo al borrar datos o cambiar de dispositivo; Google Play sigue siendo la fuente de titularidad.</p>
       </section>
 
       <section class="policy-section" id="es-features">
@@ -376,6 +381,7 @@
         <p>La app móvil ofrece precios eléctricos actuales, selección de mercado y tarifa, gráficos históricos cuando hay datos de la fuente, una calculadora de aparatos y carga de coche eléctrico, ajustes de aspecto e idioma y widgets opcionales para la pantalla de inicio. Las entradas de la calculadora y las preferencias visuales permanecen en el almacenamiento de la app. Un widget muestra una copia local de los precios o de la mezcla energética de la red del mercado seleccionado.</p>
         <p>Si activas avisos de precios, Voltix programa consultas en segundo plano para el mercado seleccionado (aproximadamente cada 30 minutos cuando Android lo permite) y utiliza los precios recibidos para preparar los avisos que hayas elegido. Una comprobación diaria independiente puede consultar los datos actuales del mercado para detectar cambios publicados en las reglas de tarifa. Android controla los permisos de notificaciones y puede aplazar tareas para ahorrar batería y datos.</p>
         <p>La app móvil actual de Voltix no ofrece una aplicación Wear OS ni una función de reloj disponible para el usuario. El código de Android sí contiene un puente en segundo plano que puede publicar una copia resumida mediante Wear Data Layer de Google Play Services cuando cambian los precios o las preferencias visuales. Puede incluir precios y horas, mercado, tarifa, moneda, mezcla energética, fuente, idioma, tema y color de acento; no incluye coordenadas de ubicación ni entradas de la calculadora. Es un flujo técnico de datos, no una aplicación Wear OS ofrecida actualmente.</p>
+        <p>Voltix puede solicitar permiso para notificaciones durante el primer inicio; puedes rechazarlo y seguir usando la app. También puede solicitar una valoración mediante el panel oficial de Google Play. Si envías estrellas o un comentario, Google Play recibe la valoración y puede publicarla según sus políticas. Voltix recibe la finalización del flujo, no las estrellas ni el texto que hayas enviado.</p>
       </section>
 
       <section class="policy-section" id="es-sharing">
@@ -384,7 +390,7 @@
         <ul>
           <li><strong>Google Mobile Ads y UMP</strong> para solicitudes y medición de anuncios, opciones de consentimiento y diagnósticos relacionados en la edición gratuita.</li>
           <li><strong>Google Play</strong> para el pago y la comprobación de la compra, y <strong>Google Play Services</strong> para la transferencia técnica a Wear Data Layer descrita arriba.</li>
-          <li><strong>Los servicios de ubicación y geocodificación de Android</strong> cuando pides una sugerencia puntual de ubicación durante la configuración.</li>
+          <li><strong>Los servicios de ubicación y geocodificación de Android</strong> cuando pides una sugerencia puntual de ubicación durante la configuración o desde Ajustes.</li>
           <li><strong>Los servicios de país por IP, los proveedores de datos eléctricos y el proveedor de tipos de cambio</strong> descritos antes, cuando la función correspondiente hace una consulta.</li>
           <li><strong>GitHub</strong> si esta política se aloja en GitHub Pages. GitHub puede procesar IP y registros técnicos de visitas para operar y proteger su plataforma. Consulta la <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement">Declaración de privacidad de GitHub</a>.</li>
         </ul>
@@ -397,12 +403,14 @@
         <p>Las preferencias, entradas de la calculadora, precios y datos energéticos en caché, copias para widgets, estado de avisos y derecho local de compra permanecen en el almacenamiento de la app hasta que se sustituyen, la app los elimina, borras los datos de Voltix o la desinstalas. Android puede conservar una copia de seguridad cuando está habilitada en los ajustes del dispositivo o de la cuenta. Google Play conserva la titularidad de las compras para poder restaurarlas; borrar los datos locales no cancela una compra completada.</p>
         <p>Puedes cambiar las preferencias de la app, retirar en Android los permisos de ubicación o notificaciones, gestionar las opciones de consentimiento publicitario disponibles en <strong>Ajustes → Datos y privacidad</strong> o borrar los datos locales de Voltix desde Android. También puedes escribir al contacto de privacidad de abajo. Para información conservada por Google, GitHub u otro proveedor, quizá debas dirigirte a ese proveedor.</p>
         <p>Según dónde vivas, la legislación de privacidad puede permitirte solicitar acceso, corrección, eliminación, limitación o una copia de información personal; oponerte a ciertos tratamientos; retirar el consentimiento para tratamientos futuros; o reclamar ante una autoridad de protección de datos. Los derechos y excepciones dependen de la legislación local. Podemos pedirte información para verificar tu identidad antes de tramitar una solicitud.</p>
+        <p>La limpieza de caché elimina registros de precios y energía usando un límite de 30 días desde su descarga o guardado, además de límites de entradas o tamaño. Se aplica también a datos históricos descargados de meses o años anteriores y a los distintos mercados. No garantiza un borrado exacto 30 días después de una fecha del calendario: la limpieza se ejecuta con las tareas correspondientes de la app y la base de datos puede recuperar espacio libre después. Las preferencias y la titularidad de una compra confirmada no forman parte de esta limpieza de precios.</p>
       </section>
 
       <section class="policy-section" id="es-security">
         <h2 class="section-title">9. Seguridad y actualizaciones de la política</h2>
         <p>Voltix utiliza HTTPS para las consultas a sus servicios públicos de electricidad, tipos de cambio y país por IP. Google Play, publicidad y consentimiento gestionan sus propias conexiones y medidas de seguridad. Ninguna transmisión por internet ni sistema de almacenamiento puede garantizar una seguridad absoluta.</p>
         <p>Actualizaremos esta página si cambian las funciones disponibles, el uso de datos o los servicios de Voltix. La fecha del encabezado indica cuándo se revisó por última vez.</p>
+        <p>Esta web de privacidad no usa SDK publicitario, scripts de analítica, fuentes externas ni cookies de seguimiento. Los controles de idioma y tema funcionan localmente en tu navegador; el idioma puede reflejarse en el fragmento de la dirección. GitHub Pages recibe las peticiones necesarias para servir la página y el logo. Si nos escribes, Galgoat recibe tu correo y el contenido que envíes para responder a tu solicitud; no envíes credenciales de pago ni datos sensibles innecesarios.</p>
       </section>
 
       <section class="contact" aria-labelledby="es-contact-title">
@@ -453,12 +461,21 @@
           root.dataset.theme = theme;
           root.style.colorScheme = theme;
         }
+        const darkLogo = theme === "dark" || (theme === "system" && matchMedia("(prefers-color-scheme: dark)").matches);
+        document.querySelector(".brand-logo").src = `voltix-horizontal-${darkLogo ? "dark" : "light"}.png`;
         themeButtons.forEach(button => button.setAttribute("aria-pressed", String(button.dataset.themeChoice === theme)));
       }
 
       languageButtons.forEach(button => button.addEventListener("click", () => setLanguage(button.dataset.languageChoice)));
       themeButtons.forEach(button => button.addEventListener("click", () => setTheme(button.dataset.themeChoice)));
-      setLanguage(location.hash === "#es" ? "es" : "en", false);
+      setLanguage(/^#es(?:-|$)/.test(location.hash) ? "es" : "en", false);
+      addEventListener("hashchange", () => {
+        const match = location.hash.match(/^#(en|es)(?:-|$)/);
+        if (match) setLanguage(match[1], false);
+      });
+      matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => {
+        if (!root.dataset.theme) setTheme("system");
+      });
       setTheme("system");
     })();
   </script>
